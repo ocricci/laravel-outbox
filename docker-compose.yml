@@ -1,0 +1,14 @@
+services:
+  php:
+    build: ./docker/php
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "9000:9000"
+    networks:
+      - backend
+    container_name: laravel-outbox-php
+
+networks:
+  backend:
+    driver: bridge
